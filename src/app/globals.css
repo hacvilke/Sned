@@ -1,0 +1,60 @@
+@import "tailwindcss";
+
+@theme {
+  /* Deliberately restrained: one accent, greys for everything else. */
+  --color-page: #f6f7f9;
+  --color-surface: #ffffff;
+  --color-surface-alt: #fafbfc;
+  --color-ink: #10151c;
+  --color-muted: #5c6672;
+  --color-faint: #8a939e;
+  --color-line: #e1e5ea;
+  --color-line-strong: #cbd2da;
+
+  --color-brand: #1a4f9c;
+  --color-brand-dark: #143d79;
+  --color-brand-soft: #eaf0f9;
+
+  --color-ok: #1d7a4c;
+  --color-ok-soft: #e9f5ef;
+  --color-warn: #9a5b0a;
+  --color-warn-soft: #fdf3e5;
+  --color-bad: #a12d2d;
+  --color-bad-soft: #fbecec;
+
+  --font-sans:
+    -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue",
+    Arial, "Noto Sans", sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  background-color: var(--color-page);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-brand);
+  outline-offset: 2px;
+}
+
+/* Determinate progress bar - no indeterminate animation, this is a work tool. */
+.progress-track {
+  background: var(--color-line);
+}
+.progress-fill {
+  background: var(--color-brand);
+  transition: width 150ms linear;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .progress-fill {
+    transition: none;
+  }
+}
