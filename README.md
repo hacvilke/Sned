@@ -1,4 +1,4 @@
-# File Transfer
+# File Transfer.
 
 Plain, corporate, no-nonsense file transfer between computers and phones.
 
